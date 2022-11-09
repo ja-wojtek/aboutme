@@ -1,5 +1,16 @@
+//Variables
+$primaryColor: #034078; // primiary color
+$secondaryColor: #001F54; //secondary color
+$darkColor: #0A1128; // dark color
+$lightColor: #1282A2; // light color
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient($lightColor, $darkColor);
 }
