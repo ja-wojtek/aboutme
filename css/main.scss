@@ -11,6 +11,76 @@ $lightColor: #1282A2; // light color
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
   height: 100vh;
-  background-image: linear-gradient($lightColor, $darkColor);
+  background: linear-gradient($lightColor, $darkColor);
+}
+
+.container {
+  position: relative;
+  width: 66%;
+  height: 66%;
+  background-color: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(-90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.25));
+  border-radius: 25px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); // for Safari users
+}
+
+.bg__img {
+  position: absolute;
+}
+
+.bg__img--chip {
+  width: 300px;
+  top: 10vh;
+  left: 33%;
+  animation: underneath-animation linear 30s infinite;
+}
+
+.bg__img--wheel {
+  width: 25vh;
+  top: 10vh;
+  left: 75vw;
+  opacity: 50%;
+  animation: rotate-cogwheel linear 30s infinite;
+}
+
+.bg__img--binary {
+  left: 0;
+  top: 0;
+  opacity: 10%;
+  height: 100vh;
+}
+
+@keyframes underneath-animation {
+  0% {
+    transform: translateY(0%);
+  }
+
+  25% {
+    transform: translate(5%, 15%)
+  }
+
+  50% {
+    transform: translate(-5%, 5%)
+  }
+
+  75% {
+    transform: translate(5%, -1%)
+  }
+}
+
+@keyframes rotate-cogwheel {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
