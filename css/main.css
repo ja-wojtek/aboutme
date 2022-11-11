@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: white;
 }
 
 body {
@@ -15,7 +17,6 @@ body {
 }
 
 h1 {
-  font-family: sans-serif;
   color: white;
   text-align: center;
   margin-top: 50px;
@@ -23,20 +24,70 @@ h1 {
 }
 
 p {
-  font-family: sans-serif;
-  color: white;
   text-align: center;
+}
+
+.fg__p {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.fg__h2--name {
+  margin-top: 5px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .container {
   position: relative;
-  width: 66%;
-  height: 66%;
+  display: flex;
+  width: 66vw;
+  height: 66vh;
   background-color: rgba(255, 255, 255, 0.15);
   background: linear-gradient(-90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.25));
   border-radius: 25px;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+  overflow: auto;
+}
+
+@media screen and (max-height: 850px) {
+  .container {
+    height: 90vh;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 80vw;
+    height: 80vh;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .container {
+    flex-wrap: wrap;
+    width: 90vw;
+    height: 90vh;
+  }
+}
+.container__left {
+  text-align: center;
+}
+
+.container__right {
+  min-width: 60%;
+}
+
+.fg__btn--skill {
+  font-size: large;
+  padding: 3px 10px;
+  border-style: none;
+  border-radius: 15px;
+  min-height: 25px;
+  margin: 10px;
+  color: #034078;
+  background-color: white;
 }
 
 .bg__img {
@@ -45,8 +96,8 @@ p {
 
 .bg__img--chip {
   width: 300px;
-  top: 10vh;
-  left: 33%;
+  top: 60vh;
+  left: 40vw;
   -webkit-animation: underneath-animation linear 30s infinite;
           animation: underneath-animation linear 30s infinite;
 }
@@ -66,6 +117,15 @@ p {
   top: 0;
   opacity: 10%;
   height: 100vh;
+}
+
+.fg__img {
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+  opacity: 80%;
+  border: solid #1282A2 2px;
+  border-radius: 50%;
 }
 
 a {
@@ -89,18 +149,25 @@ a:hover:after {
   width: 100%;
 }
 
+.footer {
+  font-size: 12px;
+  position: absolute;
+  margin-top: 100vh;
+  transform: translateY(-80%);
+}
+
 @-webkit-keyframes underneath-animation {
   0% {
     transform: translateY(0%);
   }
   25% {
-    transform: translate(5%, 15%);
+    transform: translate(-5%, 15%);
   }
   50% {
-    transform: translate(-5%, 5%);
+    transform: translate(20%, 0%);
   }
   75% {
-    transform: translate(5%, -1%);
+    transform: translate(-5%, 0%);
   }
 }
 
@@ -109,13 +176,13 @@ a:hover:after {
     transform: translateY(0%);
   }
   25% {
-    transform: translate(5%, 15%);
+    transform: translate(-5%, 15%);
   }
   50% {
-    transform: translate(-5%, 5%);
+    transform: translate(20%, 0%);
   }
   75% {
-    transform: translate(5%, -1%);
+    transform: translate(-5%, 0%);
   }
 }
 @-webkit-keyframes rotate-cogwheel {

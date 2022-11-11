@@ -9,6 +9,8 @@ $textColor: white; // text color
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: $textColor;
 }
 
 body {
@@ -22,7 +24,6 @@ body {
 }
 
 h1 {
-  font-family: sans-serif;
   color: $textColor;
   text-align: center;
   margin-top: 50px;
@@ -30,20 +31,75 @@ h1 {
 }
 
 p {
-  font-family: sans-serif;
-  color: $textColor;
   text-align: center;
+}
+
+.fg__p {
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.fg__h2--name {
+  margin-top: 5px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .container {
   position: relative;
-  width: 66%;
-  height: 66%;
+  display: flex;
+  width: 66vw;
+  height: 66vh;
   background-color: rgba(255, 255, 255, 0.15);
   background: linear-gradient(-90deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.25));
   border-radius: 25px;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px); // for Safari users
+  overflow: auto;
+}
+
+@media screen and (max-height: 850px) {
+  .container {
+    height: 90vh;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 80vw;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    flex-wrap: wrap;
+    width: 90vw;
+    height: 90vh;
+  }
+}
+
+
+.container__left {
+  text-align: center;
+}
+
+.container__right {
+  min-width: 60%;
+}
+
+.fg__btn--skill {
+  font-size: large;
+  padding: 3px 10px;
+  border-style: none;
+  border-radius: 15px;
+  min-height: 25px;
+  margin: 10px;
+  color: $primaryColor;
+  background-color: white;
 }
 
 .bg__img {
@@ -52,8 +108,8 @@ p {
 
 .bg__img--chip {
   width: 300px;
-  top: 10vh;
-  left: 33%;
+  top: 60vh;
+  left: 40vw;
   animation: underneath-animation linear 30s infinite;
 }
 
@@ -73,12 +129,20 @@ p {
   height: 100vh;
 }
 
+.fg__img {
+  margin-top: 40px;
+  width: 200px;
+  height: 200px;
+  opacity: 80%;
+  border: solid $lightColor 2px;
+  border-radius: 50%;
+}
+
 a {
   position: relative;
   text-decoration: none;
   color: $primaryColor;
 }
-
 
 a:after {
   content: "";
@@ -87,7 +151,6 @@ a:after {
   height: 2px;
   top: 100%;
   left: 0;
-  //background-color: $primaryColor;
   background: linear-gradient(90deg, transparent, $primaryColor);
   transition: width 0.35s;
 }
@@ -96,21 +159,29 @@ a:hover:after {
   width: 100%;
 }
 
+
+.footer {
+  font-size: 12px;
+  position: absolute;
+  margin-top: 100vh;
+  transform: translateY(-80%);
+}
+
 @keyframes underneath-animation {
   0% {
     transform: translateY(0%);
   }
 
   25% {
-    transform: translate(5%, 15%)
+    transform: translate(-5%, 15%)
   }
 
   50% {
-    transform: translate(-5%, 5%)
+    transform: translate(20%, 0%)
   }
 
   75% {
-    transform: translate(5%, -1%)
+    transform: translate(-5%, 0%)
   }
 }
 
