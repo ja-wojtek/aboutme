@@ -14,6 +14,20 @@ body {
   background: linear-gradient(#1282A2, #0A1128);
 }
 
+h1 {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+p {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
 .container {
   position: relative;
   width: 66%;
@@ -38,9 +52,10 @@ body {
 }
 
 .bg__img--wheel {
+  top: 40px;
   width: 25vh;
-  top: 10vh;
   left: 75vw;
+  top: 10vh;
   opacity: 50%;
   -webkit-animation: rotate-cogwheel linear 30s infinite;
           animation: rotate-cogwheel linear 30s infinite;
@@ -51,6 +66,27 @@ body {
   top: 0;
   opacity: 10%;
   height: 100vh;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #034078;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(90deg, transparent, #034078);
+  transition: width 0.35s;
+}
+
+a:hover:after {
+  width: 100%;
 }
 
 @-webkit-keyframes underneath-animation {

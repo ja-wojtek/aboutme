@@ -3,6 +3,7 @@ $primaryColor: #034078; // primiary color
 $secondaryColor: #001F54; //secondary color
 $darkColor: #0A1128; // dark color
 $lightColor: #1282A2; // light color
+$textColor: white; // text color
 
 * {
   box-sizing: border-box;
@@ -18,6 +19,20 @@ body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient($lightColor, $darkColor);
+}
+
+h1 {
+  font-family: sans-serif;
+  color: $textColor;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+
+p {
+  font-family: sans-serif;
+  color: $textColor;
+  text-align: center;
 }
 
 .container {
@@ -43,9 +58,10 @@ body {
 }
 
 .bg__img--wheel {
+  top: 40px;
   width: 25vh;
-  top: 10vh;
   left: 75vw;
+  top: 10vh;
   opacity: 50%;
   animation: rotate-cogwheel linear 30s infinite;
 }
@@ -55,6 +71,29 @@ body {
   top: 0;
   opacity: 10%;
   height: 100vh;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: $primaryColor;
+}
+
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  //background-color: $primaryColor;
+  background: linear-gradient(90deg, transparent, $primaryColor);
+  transition: width 0.35s;
+}
+
+a:hover:after {
+  width: 100%;
 }
 
 @keyframes underneath-animation {
