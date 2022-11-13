@@ -23,11 +23,8 @@ h1 {
   padding-bottom: 10px;
 }
 
-p {
-  text-align: center;
-}
-
-.fg__p {
+.fg__p,
+.sg__p {
   padding: 10px;
   font-size: 14px;
   text-align: center;
@@ -70,12 +67,22 @@ p {
     width: 90vw;
     height: 90vh;
   }
+  .fg__p--portfolio {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+  }
+  .container__right {
+    width: 100%;
+  }
 }
 .container__left {
   text-align: center;
 }
 
 .container__right {
+  text-align: center;
   min-width: 60%;
 }
 
@@ -147,6 +154,35 @@ a:after {
 
 a:hover:after {
   width: 100%;
+}
+
+.fg__p--portfolio {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+
+.fg__a--portfolio {
+  color: white;
+  font-size: 20px;
+}
+
+.fg__a--portfolio::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(90deg, transparent, white);
+  transition: width 0.35s;
+}
+
+.fg__a--portfolio::before {
+  content: url(" ../img/chain.png");
+  margin-right: 5px;
+  color: white;
 }
 
 .footer {
